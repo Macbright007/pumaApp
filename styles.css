@@ -15,6 +15,11 @@ header {
 nav {
   padding-block: 1rem;
 }
+
+label, .check_icon {
+  display: none;
+}
+
 .gen-layout {
   max-width: 1000px;
   margin: auto;
@@ -213,7 +218,7 @@ nav {
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0.2rem 0.3rem 15px rgb(223, 220, 220);
-  height: 40vh;
+  height: 50vh;
   width: 35%;
   background-color: #fff;
 }
@@ -264,8 +269,49 @@ nav {
     width: calc(100% - 30px);
   }
 
+  label{
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .nav-items {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-items > a {
+    width: 100%;
+    color: #000;
+    font-size: 18px;
+    padding: 0.6rem;
+    text-align: right;
+    border-bottom: 2px solid #ee4f0e;
+  }
+
+  .nav-items > a:last-child{
+    margin-bottom: 1.5rem;
+  }
+  
   .nav-right {
     display: none;
+    position: absolute;
+    width: 340px;
+    padding: 1.8rem;
+    top: 4.4rem;
+    right: 3px;
+    z-index: 1;
+    background-color: #e9eceb;
+    opacity: .97;
+    border-bottom: 4px solid #ee4f0e;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+
+  #toggle:checked + .nav-right {
+    display: block;
+    transform: none;
   }
 
   .banner {
@@ -279,11 +325,12 @@ nav {
   }
 
   .shoe_details{
-    width: calc(100% - 30px);
+    width: calc(100% - 60px);
   }
 
   .shoe_details_card{
-    gap: .3rem;
+    overflow-x: scroll;
+    gap: 1rem;
     padding: 1rem;
   }
 
